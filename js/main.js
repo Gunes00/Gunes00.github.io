@@ -9,7 +9,6 @@
     }
   })
 
-  // Preloader
   $(window).on('load', function () {
     if ($('#preloader').length) {
       $('#preloader').delay(100).fadeOut('slow', function () {
@@ -18,7 +17,6 @@
     }
   });
 
-  // Back to top button
   $(window).scroll(function() {
     if ($(this).scrollTop() > 100) {
       $('.back-to-top').fadeIn('slow');
@@ -31,20 +29,17 @@
     return false;
   });
 
-	/*--/ Star ScrollTop /--*/
 	$('.scrolltop-mf').on("click", function () {
 		$('html, body').animate({
 			scrollTop: 0
 		}, 1000);
 	});
 
-	/*--/ Star Counter /--*/
 	$('.counter').counterUp({
 		delay: 15,
 		time: 2000
 	});
 
-	/*--/ Star Scrolling nav /--*/
 	$('a.js-scroll[href*="#"]:not([href="#"])').on("click", function () {
 		if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
 			var target = $(this.hash);
@@ -58,19 +53,18 @@
 		}
 	});
 
-	// Closes responsive menu when a scroll trigger link is clicked
+
 	$('.js-scroll').on("click", function () {
 		$('.navbar-collapse').collapse('hide');
 	});
 
-	// Activate scrollspy to add active class to navbar items on scroll
+
 	$('body').scrollspy({
 		target: '#mainNav',
 		offset: navHeight
 	});
-	/*--/ End Scrolling nav /--*/
 
-	/*--/ Navbar Menu Reduce /--*/
+
 	$(window).trigger('scroll');
 	$(window).on('scroll', function () {
 		var pixels = 50; 
@@ -188,9 +182,7 @@ setTimeout(function() {
 }, 1000);
 
 
-/* ################################################
-            Wallpaper Engine Interaction
-   ################################################ */
+
 window.wallpaperPropertyListener = {
   applyUserProperties: function(properties) {
     if (properties.text) {
@@ -232,9 +224,7 @@ window.wallpaperPropertyListener = {
       }
     }
 
-    // Read scheme color
     if (properties.schemecolor) {
-      // Convert the scheme color to be applied as a CSS style
       let schemeColor = properties.schemecolor.value.split(' ');
       schemeColor = schemeColor.map(c => Math.ceil(c * 255));
       var schemeColorAsCSS = `rgb(${schemeColor})`;
