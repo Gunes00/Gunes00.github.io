@@ -121,7 +121,7 @@ var matrix = "\u0402\u0403\u040A\u040B\u0411\u0414\u0416\u0419\u041B\u0423\u0424
 matrix = matrix.split('');
 var rainColor = "rgb(0, 255, 0)";
 var backgroundColor = "#000000";
-var rainbowMode = true;
+var rainbowMode = false;
 
 var style = window.getComputedStyle(canvas, null).getPropertyValue("font-size");
 canvas.style.fontSize = (font_size + 1) + "px";
